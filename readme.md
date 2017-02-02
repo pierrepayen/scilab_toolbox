@@ -10,16 +10,19 @@ En l'absence de macros permettant de fournir des vrais vecteurs en 3D (xarraows,
 Scilav > v5.5.x
 Linux (devellopé/testé seulement sur CentOS 6)
 
+## Projet
+* Réecrire ce projet et suivre le standard ATOMS.
+* Supprimer les doublons par rapport à d'autres projets/modules.
+* Optimiser les codes.
+
 ## Installation
 
 `git clone https://github.com/pierrepayen/scilab_toolbox`
-`cd scilab_toolbox`
+
+`cd scilab_toolbox/PPtoolbox`
+
 `chmod u+x install.sh uninstall.sh`
+
 `./install.sh`
 
 Puis suivez-les indications.
-
-## Projet
-*Réecrire ce projet et suivre le standard ATOMS.
-*Supprimer les doublons par rapport à d'autres projets/modules.
-*Optimiser les codes.
