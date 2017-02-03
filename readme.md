@@ -17,12 +17,13 @@ Linux (devellopé/testé seulement sur CentOS 6)
 
 ## Installation
 
-`git clone https://github.com/pierrepayen/scilab_toolbox`
+`git clone https://github.com/pierrepayen/scilab_toolbox.git && cd scilab_toolbox/PPtoolbox && chmod u+x install.sh uninstall.sh && ./install.sh`
+
+## Desinstallation
 
 `cd scilab_toolbox/PPtoolbox`
-
-`chmod u+x install.sh uninstall.sh`
-
-`./install.sh`
+`./uninstall.sh && cd ../.. && rm -rf scilab_toolbox`
 
 Puis suivez-les indications.
+## Incompatibilité
+* plotlib (S. Mottelet) -> gca() différent
