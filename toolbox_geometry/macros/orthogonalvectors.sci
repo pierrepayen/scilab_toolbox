@@ -4,8 +4,9 @@ function [V,W]=orthogonalvectors(U,normalized,choice)
   // [V,W]=orthogonalvectors(U[,'normalized'],[,'cartesian'/'fast'])
   // Parameters
   // U,V,W : matrices de reels taille (n x 3). U(i,j) contient la j ieme coordonées du i ieme vecteur.
-  // opt_args : 'normalized', si renseignée, chaque vecteur de V et W sera normalisé à 1. 'cartesian'/'fast' : donne d'autre vecteurs orthogonaux. (voir description)
-  //
+  // opt_args : Arguments optionnels
+  //      'normalized', si renseignée, chaque vecteur de V et W sera normalisé à 1. 'cartesian'/'fast' : donne d'autre vecteurs orthogonaux. (voir description)
+  //      'choice', chaine de caractères 'fast','cartesian','spheric'. Par défault, 'spheric'
   // Description
   // Soit une matrice contenant des vecteurs de R3, alors orthogonalvectors(U) renvoie 2 matrices de même taille contenant les composantes deux 2 vecteurs orthogonaux au premier. Les 3 vecteurs forment un trihèdre direct de R3. 
   //

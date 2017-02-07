@@ -10,7 +10,7 @@ function [r,tet,phi,fr,ftet,fphi,er,etet,ephi]=carttospheric(x,y,z,fx,fy,fz);
   // tet : vecteur (npt) angle (radian) depuis l'axe 0Z. Appartient à [0,pi[
   // phi : vecteur (npt) angle (radian) depuis le plan x0z. Appartient à [-pi/2,pi/2[
   // fr,ftet,fphi : vecteur (npt) de réels. Composantes du vecteur sur la base (er,etheta,ephi)
-  // er,etet,ephi : vecteur (npt) de réels. Projectio nde la base (er,etet,ephi) sur (ex,ey,ez)
+  // er,etet,ephi : vecteur (npt) de réels. Projection de la base (er,etet,ephi) sur (ex,ey,ez)
   // Description
   // Le système de coordonnées est colatitude-longitude : tet mesure l'angle entre le point initial et l'axe Oz et phi entre le point et le plan xOz.
   //

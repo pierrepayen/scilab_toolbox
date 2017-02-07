@@ -1,0 +1,5 @@
+carttospheric - transform vectors defined with cartesian coordinates to spherical coordinates.
+orthogonalvectors - taken a R3 vector u, compute v,w, such that (u,v,w) form a basis of R3.
+spherictocart - transform vectors defined with spherical coordinates to cartesian coordinates.
+supporttriangle - check if a point belong to a triangle defined by 3 nodes.
+vectprod - taken u and v, two vector of R3, compute u wedge v

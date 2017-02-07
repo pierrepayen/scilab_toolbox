@@ -8,22 +8,6 @@ function quitModule()
     etc_tlbx  = getshortpathname(etc_tlbx);
     root_tlbx = strncpy( etc_tlbx, length(etc_tlbx)-length("\etc\") );
 
-    //unlink libraries
-    [bOK, ilib] = c_link('geometry_cpp');
-    if bOK then
-        ulink(ilib);
-    end
-
-    [bOK, ilib] = c_link('geometry_c');
-    if bOK then
-        ulink(ilib);
-    end
-
-    [bOK, ilib] = c_link('geometry_fortran');
-    if bOK then
-        ulink(ilib);
-    end
-
     // Remove Preferences GUI
     // =============================================================================
     if getscilabmode() == "STD" then
