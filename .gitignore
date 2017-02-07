@@ -1,0 +1,8 @@
+names
+*.bin
+path.sce
+*.jar
+scilab_fr_FR_help
+lib/
+lib
+help
