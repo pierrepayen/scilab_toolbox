@@ -1,0 +1,6 @@
+changelog of the toolbox_geometry
+
+toolbox_geometry (v1.0)
+    1er version du module Geometry
+ -- Pierre Payen <payen.pierre@gmail.com>  mar. févr.  7 14:29:08 MET 2017
+
