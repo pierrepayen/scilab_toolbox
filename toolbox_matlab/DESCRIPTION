@@ -1,0 +1,27 @@
+Toolbox: toolbox_matlab
+
+Title: Toolbox matlab
+
+Summary: Give some macros to emulate some Matlab's functionnalities
+
+Version: 1.0
+
+Author: Pierre Payen
+
+Maintainer: 
+
+Category: Matlab 
+
+Entity: 
+
+WebSite: 
+
+License: CeCILL-C
+
+ScilabVersion: >= 5.4
+
+Depends: 
+
+Date: 01/02/2017
+
+Description: This toolbox give some tools to emulate few matlab macros

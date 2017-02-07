@@ -1,0 +1,12 @@
+axis
+cla
+grid
+colormap
+hold
+num2str
+sort
+shading
+sortrows
+trisurf
+view
+whitebg
