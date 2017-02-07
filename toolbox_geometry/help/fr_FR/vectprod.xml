@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from vectprod.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="vectprod" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>vectprod</refname>
+    <refpurpose>Calcule le produit vectoriel de 2 vecteurs.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   e3=vectprod(e1,e2)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>e1,e2,e3 :</term>
+      <listitem><para> matrices n x 3</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+</refentry>

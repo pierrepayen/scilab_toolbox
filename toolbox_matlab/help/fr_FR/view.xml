@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from view.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="view" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>view</refname>
+    <refpurpose>view de Matlab</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   view(theta,phi)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>theta:</term>
+      <listitem><para> reel dans [ 0, 180 [</para></listitem></varlistentry>
+   <varlistentry><term>phi:</term>
+      <listitem><para> reel dans [ 0, 360 [</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Oriente le point du vue du graphique courant dans les coordonnées sphériques (theta,phi) en degrée.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+plot3d()
+view(0,-90)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="gca">gca</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre Payen (06/2016)</member>
+   </simplelist>
+</refsection>
+</refentry>

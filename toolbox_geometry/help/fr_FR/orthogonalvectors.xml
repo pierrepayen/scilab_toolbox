@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from orthogonalvectors.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="orthogonalvectors" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>orthogonalvectors</refname>
+    <refpurpose>Renvoie 2 vecteurs orthogonaux arbitraires</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   [V,W]=orthogonalvectors(U[,'normalized'],[,'cartesian'/'fast'])
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>U,V,W :</term>
+      <listitem><para> matrices de reels taille (n x 3). U(i,j) contient la j ieme coordonées du i ieme vecteur.</para></listitem></varlistentry>
+   <varlistentry><term>opt_args :</term>
+      <listitem><para> 'normalized', si renseignée, chaque vecteur de V et W sera normalisé à 1. 'cartesian'/'fast' : donne d'autre vecteurs orthogonaux. (voir description)</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Soit une matrice contenant des vecteurs de R3, alors orthogonalvectors(U) renvoie 2 matrices de même taille contenant les composantes deux 2 vecteurs orthogonaux au premier. Les 3 vecteurs forment un trihèdre direct de R3.
+   </para>
+   <para>
+Par defaut, ces vecteurs sont ceux de la base sphérique (convention colat-long) : si on considère que u = U(i,:) = nU*e_r. Ainsi v=V(i,:) = nU*e_tet et w=W(i,:) = nU.e_phi
+   </para>
+   <para>
+Si l'argument optionnel 'cartesian' est fourni, on procède différemment. L'idée est d'être le plus proche du repère cartésien : si u=U(i,:) est selon ex alors v=V(i,:) est de direction ey et w=W(i,:) de direction ez. Si u appartient au plan xOy (axes Ox et Oy exclus), alors v est selon ez, etc.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+figure()
+U = [ 1 0 0; 0 1 0; 0 0 1; 0 0 0; 1 1 0; 1 0 1; 0 1 1; 1 1 1];
+
+x = 1:size(U,1);
+y = zeros(x);
+z = zeros(x);
+
+nU = sqrt(sum(U.^2,2))+%eps;
+U = U ./ [nU nU nU];
+
+[V,W] = orthogonalvectors(U,'normalized')
+champ3d(x,y,z,U(:,1),U(:,2),U(:,3),'headcolor',2) // vecteurs dont on veut les orthogonaux
+champ3d(x,y,z,V(:,1),V(:,2),V(:,3),'headcolor',3) // 1er vecteur orthogonal
+champ3d(x,y,z,W(:,1),W(:,2),W(:,3),'headcolor',5) // 2ieme vecteur orthogonal
+axis equal
+
+   ]]></programlisting>
+</refsection>
+</refentry>

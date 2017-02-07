@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from num2str.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="num2str" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>num2str</refname>
+    <refpurpose>num2str de Matlab</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   str = num2str(var)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>var:</term>
+      <listitem><para> une variable Scilab: scalaire, vecteur, matrice, structure, handle.</para></listitem></varlistentry>
+   <varlistentry><term>str:</term>
+      <listitem><para> vecteur de chaines de câractères.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Renvoie la représentation de la valeur var en tant que chaine de charactère.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+num2str(1:10)
+num2str(%i)
+num2str(ones(3,3))
+   ]]></programlisting>
+</refsection>
+</refentry>

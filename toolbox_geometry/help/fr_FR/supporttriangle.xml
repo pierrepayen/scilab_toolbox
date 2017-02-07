@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from supporttriangle.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="supporttriangle" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>supporttriangle</refname>
+    <refpurpose>renvoie l'appartenance de x à un triangle</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   supp=supporttriangle(obj,iel,x)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>obj:</term>
+      <listitem><para> structure msh. voir msh.ci</para></listitem></varlistentry>
+   <varlistentry><term>iel:</term>
+      <listitem><para> vecteur de taille n d'indices.</para></listitem></varlistentry>
+   <varlistentry><term>x:</term>
+      <listitem><para> matrice nx3, composantes des points.</para></listitem></varlistentry>
+   <varlistentry><term>supp :</term>
+      <listitem><para> vecteur de taille n de boolléen</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+supporttriangle va calculer si le point x(i,:) appartient à au triangle iel(i), tel qu'il est défini par ses neuds obj.face.node(iel,:), dans ce cas supp(i) = %t;
+</para>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="msh">msh</link></member>
+   </simplelist>
+</refsection>
+</refentry>

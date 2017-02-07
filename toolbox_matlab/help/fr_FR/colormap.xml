@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from colormap.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="colormap" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>colormap</refname>
+    <refpurpose>colormap de Matlab</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   colormap(arg[ ,opt_arg])
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>arg:</term>
+      <listitem><para> (chaine de caractère) Type de la colormap : 'jet','hot','cool','gray','autumn'.</para></listitem></varlistentry>
+   <varlistentry><term>opt_arg :</term>
+      <listitem><para> n (entier) Nombre de couleurs. Par défaut, 32.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Selon arg, va choisir une colormap sur 32 couleurs, sauf si n est fourni, auquel cas, la colormap utilisera n nuances de couleurs. Choix pour arg = 'jet','hot','cool','gray','autumn'. Si arg est different de ces valeurs, la colormap par defaut est utilisée
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+plot3d()
+colormap('hot')
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="gcf">gcf</link></member>
+   <member><link linkend="jetcolormap">jetcolormap</link></member>
+   <member><link linkend="hotcolormap">hotcolormap</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre Payen (06/2016)</member>
+   </simplelist>
+</refsection>
+</refentry>

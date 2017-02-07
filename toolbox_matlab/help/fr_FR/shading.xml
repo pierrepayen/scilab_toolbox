@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from shading.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="shading" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>shading</refname>
+    <refpurpose>shading de Matlab.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   shading shading_mode
+   shading(shading_mode[,handle][,verbose])
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>shading_mode :</term>
+      <listitem><para>chaine de caractères. 'zheight','interp','flat','flat_Matlab'</para></listitem></varlistentry>
+   <varlistentry><term>(optionnel) handle :</term>
+      <listitem><para> handle depuis lequel changer le shading (récursif sur ses children). [Par défaut, gcf()];</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Si aucun aurgument n'est passé, ne fait rien.
+Choix pour shading_mode
+<itemizedlist>
+<listitem><para>'zheight', les couleurs seront proportionneles à la hauteur des points.</para></listitem>
+<listitem><para>         ' interp', les couleurs sont interpolés pour un rendus plus lisse.</para></listitem>
+<listitem><para>         ' flat', il n'y a qu'une couleur par element.</para></listitem>
+</itemizedlist>
+<warning> Cette fonction ne produit l'effet désiré que sur des objets fac3d ! </warning>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+figure()
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre Payen (06/2016) </member>
+   </simplelist>
+</refsection>
+</refentry>

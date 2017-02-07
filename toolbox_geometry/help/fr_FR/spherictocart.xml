@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from spherictocart.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="spherictocart" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>spherictocart</refname>
+    <refpurpose>Passage de coordonnées et composantes cartésiennes à sphériques (convention colat-long) pour un vecteur pour trace dans un graphe</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   [x,y,z,fx,fy,fz]=sphfrictocart(r,tet,phi,fr,ftet,fphi)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>r :</term>
+      <listitem><para> vecteur (npt) de réels  &gt;= 0</para></listitem></varlistentry>
+   <varlistentry><term>tet :</term>
+      <listitem><para> vecteur (npt) angle (radian) depuis l'axe 0Z. Appartient à [0,pi[</para></listitem></varlistentry>
+   <varlistentry><term>phi :</term>
+      <listitem><para> vecteur (npt) angle (radian) depuis le plan x0z. Appartient à [-pi/2,pi/2[</para></listitem></varlistentry>
+   <varlistentry><term>fr,ftet,fphi :</term>
+      <listitem><para> vecteur (npt) de réels. Composantes du vecteur sur la base (fr,etheta,fphi)</para></listitem></varlistentry>
+   <varlistentry><term>x,y,z :</term>
+      <listitem><para> vecteur (npt) de réels. Coordonnées du point initial du vecteur.</para></listitem></varlistentry>
+   <varlistentry><term>fx,fy,fz :</term>
+      <listitem><para> vecteur (npt) réels. Composantes du vecteur sur (ex,ey,ze).</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Le système de coordonnées est colatitude-longitude : tet mesure l'angle entre le point initial et l'axe Oz et phi entre le point et le plan xOz.
+   </para>
+   <para>
+Soit le vecteur de point initial (r,tet,phi)(i) de composantes (fr,ftet,fphi)(i), sphfrictocart calcule les coordonnées cartésiennes (x,y,z)(i) du point initial, et aussi les composantes cartésiennes (fx,fy,fz)(i) du vecteur.
+Normalement le fait de dire 'un vecteur passe par un point' n'a pas de sens. Mais ici on veut tracer ce vecteur. on donc bien besoin de savoir le repère er,etheta,ephi à utiliser. Cela nécessite de connaitre un point pour calculer r,theta,phi,fr,etheta,fphi, et d'en déduire fx,fy,fz. Sans ce point, tous les vecteurs sont du type r*er.
+   </para>
+   <para>
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+r = 1;
+tet = [0,%pi/2,%pi/2];
+phi = [0,0,%pi/2]; // points en (0,0,1) (1,0,0) (0,1,0) dans repère cartésien
+
+fr = [1 0 0];   // vecteur en fr et point en (0,0,1) donc vecteur en (0,0,1) dans cartésien
+ftet = [0 1 0]; // vecteur en ftet et point en (1,0,0) donc vecteur en (0,0,-1) dans cartésien
+fphi = [0 0 1]; // vecteur en fphi et point en (0,1,0, donc vecteur en (-1,0,0) dans cartésien
+[x,y,z,fx,fy,fz] = spherictocart(r,tet,phi,fr,ftet,fphi);
+
+   ]]></programlisting>
+</refsection>
+</refentry>

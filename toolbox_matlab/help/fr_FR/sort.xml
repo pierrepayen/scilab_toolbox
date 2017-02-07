@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from sort.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="sort" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>sort</refname>
+    <refpurpose>sort à la Matlab.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   [Y[,k]] = sort(X[,opt_args])
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>X,Y :</term>
+      <listitem><para> vecteur ou matrice reel</para></listitem></varlistentry>
+   <varlistentry><term>k :</term>
+      <listitem><para> vecteur/matrice des indices initiaux avant le tri, respectivement</para></listitem></varlistentry>
+   <varlistentry><term>à chaque colonne:</term>
+      <listitem><para> si vecteur X(k)=Y, si matrice X(k(:,i),:)=Y(:,i)</para></listitem></varlistentry>
+   <varlistentry><term>opt_arg :</term>
+      <listitem><para> entier optionnels</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Si X est un vecteur, renvoie dans Y le tri croissant de X et dans k
+les indices initiaux. Si X est une matrice,renvoie la matrice X dont chaque
+colonne est triée dans l'ordre croissant independemment des autres.
+si dir = 1, identique à sort(X). Si dir = 2, le tri est effectué sur les lignes
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+X = rand(10,1)
+Y = sort(X)
+A = rand(10,10)
+[B,k] = sort(A)
+C = sort(A,1)
+D = sort(A,2)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="sortrows">sortrows</link></member>
+   <member><link linkend="gsort">gsort</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre Payen (06/2016) </member>
+   </simplelist>
+</refsection>
+</refentry>

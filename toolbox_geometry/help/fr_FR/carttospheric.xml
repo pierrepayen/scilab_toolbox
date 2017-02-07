@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from carttospheric.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="carttospheric" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>carttospheric</refname>
+    <refpurpose>Passage de coordonnées et composantes sphériques (convention colat-long) à cartésiennes pour un vecteur pour trace dans un graphe.</refpurpose>
+  </refnamediv>
+
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>x,y,z :</term>
+      <listitem><para> vecteur (npt) de réels. Coordonnées du point initial du vecteur.</para></listitem></varlistentry>
+   <varlistentry><term>fx,fy,fz :</term>
+      <listitem><para> vecteur (npt) réels. Composantes du vecteur sur (ex,ey,ze).</para></listitem></varlistentry>
+   <varlistentry><term>r :</term>
+      <listitem><para> vecteur (npt) de réels  &gt;= 0</para></listitem></varlistentry>
+   <varlistentry><term>tet :</term>
+      <listitem><para> vecteur (npt) angle (radian) depuis l'axe 0Z. Appartient à [0,pi[</para></listitem></varlistentry>
+   <varlistentry><term>phi :</term>
+      <listitem><para> vecteur (npt) angle (radian) depuis le plan x0z. Appartient à [-pi/2,pi/2[</para></listitem></varlistentry>
+   <varlistentry><term>fr,ftet,fphi :</term>
+      <listitem><para> vecteur (npt) de réels. Composantes du vecteur sur la base (er,etheta,ephi)</para></listitem></varlistentry>
+   <varlistentry><term>er,etet,ephi :</term>
+      <listitem><para> vecteur (npt) de réels. Projectio nde la base (er,etet,ephi) sur (ex,ey,ez)</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Le système de coordonnées est colatitude-longitude : tet mesure l'angle entre le point initial et l'axe Oz et phi entre le point et le plan xOz.
+   </para>
+   <para>
+Soit le vecteur de point initial (x,y,z)(i) de composantes (fx,fy,fz)(i), carttospheric calcule les coordonnées sphériques (r,tet,phi)(i) du point initial, et aussi les composantes sphériques (er,etet,ephi)(i) du vecteur.
+On veut tracer ce vecteur. On donc bien besoin de savoir le repère (er,etheta,ephi) à utiliser. C'est pour cela que ces vecteurs sont renvoyés comme des vecteures de R3.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+x = [1 0 0]; // on s'attend à avoir r,tet,phi = [1,pi/2,0]
+y = [0 1 0]; // on s'attend à avoir r,tet,phi = [1,pi/2,pi/2]
+z = [0 0 1]; // on s'attend à avoir r,tet,phi = [1,0,0]
+
+fx = [1 0 0];  // on s'attend à avoir fr,ftet,fphi = [1,0,0]
+fy = [0 1 0];  // on s'attend à avoir fr,ftet,fphi = [1,0,0]
+fz = [0 0 1];  // on s'attend à avoir fr,ftet,fphi = [1,0,0]
+[r,tet,phi,fr,ftet,fphi]=carttospheric(x,y,z,fx,fy,fz);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre Payen</member>
+   </simplelist>
+</refsection>
+</refentry>

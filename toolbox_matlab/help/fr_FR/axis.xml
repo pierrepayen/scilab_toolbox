@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from axis.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="axis" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>axis</refname>
+    <refpurpose>axis de Matlab</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   axis(arg)
+   axis arg
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>arg:</term>
+      <listitem><para> chaine de caractère. Peut valoir 'equal','on','off'</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Si arg = 'on', axis affiche les 3 axes et la boite englobante
+Si arg = 'off', axis efface les 3 axes plus la boite englobante
+Si arg = 'equal', axis redimmensionne les axes de façon à avoir une figure isométrique.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+plot3d()
+axis equal
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="gca">gca</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre Payen (06/2016)</member>
+   </simplelist>
+</refsection>
+</refentry>

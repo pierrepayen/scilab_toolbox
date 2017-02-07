@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from trisurf.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="trisurf" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>trisurf</refname>
+    <refpurpose>trisurf de Matlab.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   trisurf(nodes,x,y,z [,opt_args])
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>nodes :</term>
+      <listitem><para> matrice réelle taille (nelements x npointpartelement).</para></listitem></varlistentry>
+   <varlistentry><term>x,y,z :</term>
+      <listitem><para> vecteurs réels taille (npoints)</para></listitem></varlistentry>
+   <varlistentry><term>opt_args :</term>
+      <listitem><para> arguments optionnels par couple 'key',val</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Va représenter le maillage defini par les points en x,y,z et les éléments définis par les points nodes.
+   </para>
+   <para>
+Details de opt_args:
+<itemizedlist>
+<listitem><para>key = 'value' : val est un vecteur de réel taille (nelement).Appliquera une couleur relative à value sur chaque élément. Par défaut , vecteur de 1.</para></listitem>
+<listitem><para>key = 'min' : val est un réel. Si 'value' est indiqué, appliquera une couleur relative à [min,value] sur chaque élément. Par défaut, %inf.</para></listitem>
+<listitem><para>key = 'max' : val est un réel. Si 'value' est indiqué, appliquera une couleur relative à [value,max] sur chaque élément. Par défaut, -%inf</para></listitem>
+<listitem><para>key = 'color' : val est un entier. Appliquera la couleur val sur toute la surface; si 'value' est fournis, ne sert à rien. Par défaut, 2.</para></listitem>
+</itemizedlist>
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+nodes = [ 1 2 3; 1 4 2; 1 3 4]
+x = [0 0 1 -1 0]'
+y = [0 1 0 -1 2]'
+z = [0 -1 0 -1 0]'
+
+figure(1)
+set(gcf(),'background',-2)
+subplot(2,2,1)
+// Affichage simple
+trisurf(nodes,x,y,z)
+
+subplot(2,2,2)
+// On change la couleur
+trisurf(nodes,x,y,z,'color',3)
+
+subplot(2,2,3)
+// On change les données, ce qui crée des couleurs spécifique
+value = [-1 0 1]
+trisurf(nodes,x,y,z,'value',value)
+
+subplot(2,2,4)
+// On change l'échelle, donc les couleurs
+trisurf(nodes,x,y,z,'value',value,'max',2)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="plot3d">plot3d</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre Payen (06/2016) </member>
+   </simplelist>
+</refsection>
+</refentry>

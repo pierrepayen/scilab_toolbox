@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from sortrows.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="sortrows" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>sortrows</refname>
+    <refpurpose>sortrows de Matlab.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   [B[,k]] = sortrows(A)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>A,B :</term>
+      <listitem><para> matrices reelles</para></listitem></varlistentry>
+   <varlistentry><term>k :</term>
+      <listitem><para> vecteur/matrice des indices initiaux avant le tri, respectivement</para></listitem></varlistentry>
+   <varlistentry><term>à chaque colonne:</term>
+      <listitem><para> si vecteur X(k)=Y, si matrice A(k(:,i),:)=B(:,i)</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+SORTROWS va trier lexicographiquement la matrice par colonne.
+cela revient à permuter les lignes de tel sorte que B(i+1,1) &gt;= B(i,1)
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+A = rand(3,3)
+B = sortrows(A)
+[B,k] = sortrows(A)
+
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="gsort">gsort</link></member>
+   <member><link linkend="sort">sort</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre Payen (06/2016) </member>
+   </simplelist>
+</refsection>
+</refentry>

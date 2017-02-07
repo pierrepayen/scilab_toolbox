@@ -3,6 +3,5 @@ names
 path.sce
 *.jar
 scilab_fr_FR_help
-lib/
+PPtoolbox/help
 lib
-help
