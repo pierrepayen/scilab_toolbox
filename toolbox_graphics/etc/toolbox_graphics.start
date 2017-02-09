@@ -1,0 +1,47 @@
+// Copyright (C) 2008 - INRIA
+// Copyright (C) 2009 - DIGITEO
+
+// This file is released under the 3-clause BSD license. See COPYING-BSD.
+
+function toolbox_graphicslib = startModule()
+
+    TOOLBOX_NAME  = "toolbox_graphics";
+    TOOLBOX_TITLE = "Toolbox graphics";
+
+  mprintf("Start " + TOOLBOX_TITLE + "\n");
+
+  if isdef("toolbox_graphicslib") then
+    warning("Toolbox graphics library is already loaded");
+    return;
+  end
+
+  etc_tlbx  = get_absolute_file_path("toolbox_graphics.start");
+  etc_tlbx  = getshortpathname(etc_tlbx);
+  root_tlbx = strncpy( etc_tlbx, length(etc_tlbx)-length("\etc\") );
+
+//Load  functions library
+// =============================================================================
+  mprintf("\tLoad macros\n");
+  pathmacros = pathconvert( root_tlbx ) + "macros" + filesep();
+  toolbox_graphicslib = lib(pathmacros);
+
+// Load and add help chapter
+// =============================================================================
+  if or(getscilabmode() == ["NW";"STD"]) then
+    mprintf("\tLoad help\n");
+    path_addchapter = pathconvert(root_tlbx+"/jar");
+    if ( isdir(path_addchapter) <> [] ) then
+      add_help_chapter(TOOLBOX_NAME, path_addchapter, %F);
+    end
+  end
+
+// Load Preferences GUI
+// =============================================================================
+  if getscilabmode() == "STD" then
+    addModulePreferences(TOOLBOX_TITLE, root_tlbx, etc_tlbx + "toolbox_graphics_preferences.xml");
+  end
+
+endfunction
+
+toolbox_graphicslib = startModule();
+clear startModule; // remove startModule on stack

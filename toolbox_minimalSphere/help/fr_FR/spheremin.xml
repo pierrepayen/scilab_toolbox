@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from spheremin.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="spheremin" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>spheremin</refname>
+    <refpurpose>Structure de gestion pour calcul de sphère minimale (bounding sphere) à un nuage de points 3D/2D.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   spmin = spheremin()
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Plus qu'une fonction, c'est une structure dont les champs sont des fonctions pour calculer heristiquement (5% -&gt; 20% erreur) le centre &amp; le rayon de la sphère minimale à un nuage de points
+   </para>
+   <para>
+Tentative d'écriture en POO, mais très imparfait
+   </para>
+   <para>
+Description des champs de spheremin :
+<itemizedlist>
+<listitem><para>'calc' : structure à 2 champs pour calculer la sphere minimale (le cercle minimal) à un nuage de points 3D (2D)
+<itemizedlist>
+<listitem><para>'sphere' : [Xc,r] = spmin.calc.sphere(X); Prend une matrice n x 3 et renvoie les coordonnées du centre et le rayo. L'algo utilise fminsearch. Pour un algo plus rapide mais moin précis,  utiliser [Xc,r] = spmin.calc.sphere(X,algo='heuris')</para></listitem>
+<listitem><para>'cercle' : [Xc,r] = spmin.calc.cercle(X); Prend une matrice n x 2 et renvoie les coordonnées du centre et le rayo. </para></listitem>
+</itemizedlist>
+</para></listitem>
+<listitem><para>'plot' : structure à 3 champs pour afficher la sphere (le cercle) et le nuage de points.
+<itemizedlist>
+<listitem><para>'sphere' : spmin.plot.sphere(Xc,r); Affiche une sphère caractérisée par son centre Xc et son rayon. </para></listitem>
+<listitem><para>'cercle' : spmin.plot.cercle(Xc,r); Affiche un cercle caractérisé par son centre Xc et son rayon.</para></listitem>
+<listitem><para>'points' : spmin.plot.points(X[,'style',style][,'color',color]); Affiche un nuage de points, matrice n x 2 ou n x 3</para></listitem>
+</itemizedlist>
+</para></listitem>
+</itemizedlist>
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+x = rand(10,1) // vecteur colonne !
+y = rand(10,1)
+z = rand(10,1)
+X = [x,y,z] // matrice n x 3
+spmin = spheremin() // initialisation de la structure
+[Xc,r] = spmin.calc.sphere(X)  // calcule la sphere minimale à X
+spmin.plot.sphere(Xc,r) // affiche la sphere
+spmin.plot.points(X) // affiche les points
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="msh">msh</link></member>
+   <member><link linkend="xarc">xarc</link></member>
+   <member><link linkend="plot3d1">plot3d1</link></member>
+   <member><link linkend="fminsearch">fminsearch</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre Payen (06/2016)</member>
+   </simplelist>
+</refsection>
+</refentry>

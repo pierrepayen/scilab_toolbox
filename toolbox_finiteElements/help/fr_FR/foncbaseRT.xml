@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from foncbaseRT.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="foncbaseRT" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>foncbaseRT</refname>
+    <refpurpose>Scruture de gestion des fonctions de base éléments finis Raviar Thomas.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   sRT=foncbaseRT()
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>sRT :</term>
+      <listitem><para> structure à 2 champs de type fonctions : bary, J</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+[phi1,phi2,phi3]=sRT.bary(obj) : prend un objet msh.sci en parametre, et renvoie les 3 fonctions de bases calculées au barycentre de chaque élément.
+   </para>
+   <para>
+J=sRT.J(obj,I) : recompose <latex> J = \sum_j \Phi_j I_j </latex> où <latex>\phi_j</latex> est la j-ieme fonction de base associée à l'arête j.
+</para>
+</refsection>
+</refentry>

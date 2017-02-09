@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from msh.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="msh" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>msh</refname>
+    <refpurpose>Structure de gestion de maillage type Pierre PAYEN</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   mshS = msh()
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>mshS :</term>
+      <listitem><para> structure à 4 champs de type 'fonction' scilab.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Cette fonction renvoie une structure de gestion de maillage
+Les champs de cette structure sont des fonctions:
+<itemizedlist>
+<listitem><para> mshS.init() : Initialise une structure contenant la géometrie d'un maillage vide.</para></listitem>
+<listitem><para> obj = mshS.read(fic_mail) : Prend en argument un fichier .maila et lit les coordonnées des noeuds et les connectivités éléments-noeuds et renvoie la structure mise à jour.</para></listitem>
+<listitem><para> obj = mshS.more(obj) : Après read, calcule les connectivités éléments-arêtes , arêtes-noeuds et renvoie la structure mise à jour. Peut être long (30s pour 10 000 élements).</para></listitem>
+<listitem><para> mshS.plot(obj[,mode[,ind]]) : Affiche le maillage. mode = 'mesh','node','edge','face','all'; permet d'afficher les indices des noeuds,arêtes et/ou éléments, vaut par defaut 'mesh' (objet seul), L'objet est alors affiché en fil de fer pour plus de lisibilité. ind renseigne les indices particulier à afficher.</para></listitem>
+</itemizedlist>
+   </para>
+   <para>
+<important> Pour bien fonctionner, msh.sci nécessite Matlab_emulationlib (Pierre Payen) : appel à sort, trisurf etc ...</important>
+   </para>
+   <para>
+Description des champs de  la structure du maillage en lui même:
+<itemizedlist>
+<listitem><para> obj.loaded : chaine de caractères; information du degré de chargement du maillage.</para></listitem>
+<listitem><para> obj.name : chaine de caractères; nom du maillage.</para></listitem>
+<listitem><para> obj.nnode : entier; nombre de noeuds.</para></listitem>
+<listitem><para> obj.nface : entier; nombre d'éléments.</para></listitem>
+<listitem><para> obj.nnedge : entier; nombre d'arêtes.</para></listitem>
+<listitem><para> obj.node : structure à 3 champs; coordonnées des noeuds</para></listitem>
+<itemizedlist>
+<listitem><para> obj.node.x : vecteur ( nnode x 1 ); 1er coordonnées des noeuds</para></listitem>
+<listitem><para> obj.node.y : vecteur ( nnode x 1 ); 2eme coordonnées des noeuds</para></listitem>
+<listitem><para> obj.node.z : vecteur ( nnode x 1 ); 3eme coordonnées des noeuds</para></listitem>
+</itemizedlist>
+<listitem><para> obj.face : structure à 3 champs; indices des noeuds (face.node) et des aretes(face.edge) composant les éléments,  et le type (face.type) relatif de matériau de l'élement</para></listitem>
+<itemizedlist>
+<listitem><para> obj.face.node : vecteur ( nface x 3 ); indices globaux des noeuds locaux aux éléments.</para></listitem>
+<listitem><para> obj.face.edge : vecteur ( nface x 3 ); indices globaux des arêtes locales aux éléments.</para></listitem>
+<listitem><para> obj.face.type : vecteur ( nface x 1 ); indices des numéros de matériaux.</para></listitem>
+</itemizedlist>
+<listitem><para> obj.edge : structure à 4 champs; indices des noeuds (edge.node) et des éléments(edge.face) composant les arêtes. Longueurs des artes (edge.len) et l'arêtes maximale (edge.max )</para></listitem>
+<itemizedlist>
+<listitem><para> obj.edge.node : vecteur ( nedge x 2 ); indices globaux des noeuds locaux aux arêtes.</para></listitem>
+<listitem><para> obj.edge.face : vecteur ( nedge x 3 ); indices globaux des éléments locaux aux arêtes.</para></listitem>
+<listitem><para> obj.face.len : vecteur ( nedge x 1 ); longueurs des arêtes.</para></listitem>
+<listitem><para> obj.face.mean : réel; longueur moyenne.</para></listitem>
+</itemizedlist>
+<listitem><para> obj.sphere: structure optionnelle; Contient position et rayon de la shere englobante. Voir spheremin() </para></listitem>
+</itemizedlist>
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+fic_mail = uigetfile('*.maila','.');
+mshS = msh() ; // initialisation de la structure de gestion
+obj = mshS.init(); // initialisation de la structure de maillage
+obj = mshS.read(fic_mail); // lit fic_mail et renvoie le maillage
+obj = mshS.more(obj); // analyse le maillage et renvoie un maillage avec plus d'information
+nom = obj.name // nom du maillage
+X = obj.node.x // coordonnées X des noeuds
+EX1 = obj.node.x(obj.face.node(1,:)) // composante X du 1er noeud de tous les éléments
+EA10 = obj.face.edge(10,:) // numéros globaux des arêtes de l'élément 10
+AE10 = obj.edge.face(10,:) // numéros globaux des éléments de l'arête 10
+figure(1)
+subplot(2,1,1)
+mshS.plot(obj)
+subplot(2,1,2)
+mshS.plot(obj,'edge',1:10:obj.nedge)
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="spheremin">spheremin</link></member>
+   <member><link linkend="trisurf">trisurf</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre PAYEN (08/2016)</member>
+   </simplelist>
+</refsection>
+</refentry>

@@ -1,0 +1,27 @@
+Toolbox: toolbox_minimalSphere
+
+Title: Toolbox minimalSphere
+
+Summary: Provide a structure to compute the minimal sphere to a set of 3D points
+
+Version: 1.0
+
+Author: Pierre Payen
+
+Maintainer: 
+
+Category: Mathematic - minimalSphere
+
+Entity: 
+
+WebSite: 
+
+License: CeCILL-C
+
+ScilabVersion: >= 5.4
+
+Depends: 
+
+Date: 01/02/2017
+
+Description: This package contains a single function cut into sub functions to compute the minimal sphere to a set of points, i.e sphere including all the set with the lowest volume.

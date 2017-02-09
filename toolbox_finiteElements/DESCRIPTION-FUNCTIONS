@@ -1,0 +1,3 @@
+foncbaseRT : allow to compute Raviart-Thomas function
+foncbaseRWG : allow to compute Rao-Wilton-Glisson function
+msh.sci : provide a struct to handle a particular type of mesh

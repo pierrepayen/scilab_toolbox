@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from sphereplot.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="sphereplot" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>sphereplot</refname>
+    <refpurpose>Potentiel sur une partie de sphère</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   sphereplot(theta,phi,P[,opt_args])
+   sphereplot(theta,phi,P[,'min',mn][,'max',mx])
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>theta :</term>
+      <listitem><para> vecteur taille n1. Domaine angulaire par rapport à Oz en radians. [0,pi]</para></listitem></varlistentry>
+   <varlistentry><term>phi :</term>
+      <listitem><para> vecteur taille n2. Domaine angulaire par rapport à xOz en radians. [0,2pi] ou [-%pi/2,%pi/2]</para></listitem></varlistentry>
+   <varlistentry><term>P :</term>
+      <listitem><para> matrice réelle n1 x n2. Potentiel P(i,j) aux noeuds theta(i), phi(j).</para></listitem></varlistentry>
+   <varlistentry><term>opt_args :</term>
+      <listitem><para> arguments optionnels par couple 'key',val</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Trace la sphère dans le domaine (theta,phi) puis collorise les noeuds selon P,
+en interpolant les couleurs entre les noeud.
+   </para>
+   <para>
+Description des arguments optionnels
+   </para>
+   <para>
+key = 'min'; val scalaire. Etalonne les couleurs pour que val soit représenté par la premiere couleur de la colormap.
+key = 'max'; val scalaire. Etalonne les couleurs pour que val soit représenté par la dernière couleur de la colormap.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+figure()
+sphereplot()
+
+figure()
+theta = linspace(%pi/10,%pi/2,10)
+phi = linspace(0,%pi/7,30)
+P = rand(length(theta),length(phi),'normal');
+sphereplot(theta,phi,P)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+    <title>Screenshots</title>
+   <para>
+<scilab:image> sphereplot(); title('Exemple 1'); </scilab:image>
+<scilab:image> sphereplot(linspace(%pi/10,%pi/2,10),linspace(0,%pi/7,30),rand(20,30,'normal')); title('Exemple 2'); </scilab:image>
+
+   </para>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="plot3d">plot3d</link></member>
+   <member><link linkend="eval3d">eval3d</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre Payen (08/2016)</member>
+   </simplelist>
+</refsection>
+</refentry>

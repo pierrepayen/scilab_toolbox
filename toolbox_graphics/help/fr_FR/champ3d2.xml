@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from champ3d2.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="champ3d2" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>champ3d2</refname>
+    <refpurpose>Graphes 3D d'un champ de vecteurs.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   champ3d2(x,y,z,fx,fy,fz [,opt_args])
+   h = champ3d2(x,y,z,fx,fy,fz [,'key1',val1][,'key2',val2],...)
+   h = champ3d2(x,y,z,fx,fy,fz,'prop',prop,'nface',nface,'sizefactor',sizefactor,'headcolor',headcolor,'bodycolor',bodycolor,'color_mode',color_mode)
+   h = champ3d2(x,y,z,fx,fy,fz,'headcolor',headcolor,'mode','fast')
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>h:</term>
+      <listitem><para> handle. Fac3d.</para></listitem></varlistentry>
+   <varlistentry><term>x,y,z:</term>
+      <listitem><para> vecteurs taille npoints. Coordonnées cartésiennes des points initiaux.</para></listitem></varlistentry>
+   <varlistentry><term>fx,fy,fz:</term>
+      <listitem><para> vecteurs taille npoints. Composantes cartésiennes des vecteurs.</para></listitem></varlistentry>
+   <varlistentry><term>opt_args :</term>
+      <listitem><para> arguments optionnels par couple 'key',val</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+champ3d2 dessine un champ de vecteur en 3D. Le vecteur est un polygone maillé en triangle et la taille du vecteur est proportionnel à sa norme. Si vous désirez des vecteurs colorés, voir champ3d1. Si le nombre de vecteurs est supérieur à 1000, l'option 'mode','fast' est recommandée.
+   </para>
+   <para>
+<itemizedlist>
+<listitem><para>key = 'prop' : val est un réel entre 0 et 1. Represente la proportion corps/taille totale. 0 pour afficher des cônes, 1 pour des segments de droite. Par défaut, 0.7</para></listitem>
+<listitem><para>key = 'nface' : val est un entier positif. La tête de fleche est un polyhêdre régulier à nface face Par default, 5.</para></listitem>
+<listitem><para>key = 'sizefactor' : val est un réel. Permet d'agrandir la taille des vecteurs par rapport à leur taille par default. Par default, 1</para></listitem>
+<listitem><para>key = 'headcolor' : val est un entier. Permet de définir la couleur de la tête des vecteurs. Par default, -1 (noir).</para></listitem>
+<listitem><para>key = 'bodycolor' : val est un entier. Permet de définir la couleur du corps des vecteurs. Par default, -1 (noir).</para></listitem>
+<listitem><para>key = 'mode' : val chaine de caractère. Si val = 'fast', alors les fleches sont des objets 2D (xarrows). Beaucoup plus rapide, mais il n'y plus de profondeur, les têtes de fleches étant toujours plates quelque soit l'orientation. Les options nface,prop,sizefactor et bodycolor sont inutile avec ce mode.</para></listitem>
+<listitem><para>key = 'color_mode' : val est un entier. Modifie la propriété 'color_mode' de l'entité graphique. Si color_mode = 2, les arêtes sont dessinées. Par défaut, -2</para></listitem>
+</itemizedlist>
+   </para>
+   <para>
+<warning>champ3d2 nécessite trisurf.sci et ortogonalvectors.sci</warning>
+   </para>
+   <para>
+En mode normal, un vecteur est un objet fac3d possédant npoints=3*nface+2 où nface est le nombre d'arete sur la base du vecteur.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+xdel(winsid())
+n = 100
+x = rand(n,1,'normal');
+y = rand(n,1,'normal');
+z = rand(n,1,'normal');
+fx = sign(x).*x.*x;
+fy = sign(y).*y.*y;
+fz = sign(z).*z.*z;
+champ3d2(x,y,z,fx,fy,fz);
+
+// Même données, mais vecteurs dont la tête fait 50% du corps,
+// est un tetrahedre à 3 côtés et de couleur bleu avec le corp en rouge et 2 fois plus petit.
+champ3d2(x,y,z,fx,fy,fz,'headcolor',color('blue'),'bodycolor',color('red'),'prop',0.5,'nface',3,'sizefactor',0.5)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="champ3d21">champ3d21</link></member>
+   <member><link linkend="x_arrows">x_arrows</link></member>
+   <member><link linkend="champ3d">champ3d</link></member>
+   <member><link linkend="champ3d1">champ3d1</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre Payen (07/2016)</member>
+   </simplelist>
+</refsection>
+</refentry>

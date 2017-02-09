@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from champ3d1.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="champ3d1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>champ3d1</refname>
+    <refpurpose>Graphes 3D d'un champ de vecteurs.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   champ3d1(x,y,z,fx,fy,fz [,opt_args])
+   h = champ3d1(x,y,z,fx,fy,fz [,'key1',val1][,'key2',val2],...)
+   h = champ3d1(x,y,z,fx,fy,fz,'prop',prop,'nface',nface,'sizefactor',sizefactor,'color_mode',color_mode)
+   h = champ3d1(x,y,z,fx,fy,fz,'mode','fast')
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>h:</term>
+      <listitem><para> handle. Coupound 3 x fac3d.</para></listitem></varlistentry>
+   <varlistentry><term>x,y,z:</term>
+      <listitem><para> vecteurs taille npoints. Coordonnées cartésiennes des points initiaux.</para></listitem></varlistentry>
+   <varlistentry><term>fx,fy,fz:</term>
+      <listitem><para> vecteurs taille npoints. Composantes cartésiennes des vecteurs.</para></listitem></varlistentry>
+   <varlistentry><term>opt_args :</term>
+      <listitem><para> arguments optionnels par couple 'key',val</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+champ3d dessine un champ de vecteur en 3D. La tête du vecteur est un polygone régulier 3D et la couleur du vecteur est proportionnel à sa norme. Si vous désirez des vecteurs dont la taille est proportionnelle à leur norme, voir champ3d. Si le nombre de vecteurs est supérieur à 1000, l'option 'mode','fast' est recommandée.
+   </para>
+   <para>
+<itemizedlist>
+<listitem><para>key = 'prop' : val est un réel entre 0 et 1. Represente la proportion corps/taille totale. 0 pour afficher des cônes, 1 pour des segments de droite. Par défaut, 0.7</para></listitem>
+<listitem><para>key = 'nface' : val est un entier positif. La tête de fleche est un polyhêdre régulier à nface face Par default, 5.</para></listitem>
+<listitem><para>key = 'sizefactor' : val est un réel. Permet d'agrandir la taille des vecteurs par rapport à leur taille par default. Par default, 1</para></listitem>
+<listitem><para>key = 'size' : val est un réel. Definit la taille des vecteurs. Par defaut, moyenne entre la plus grande et la plus petite norme.</para></listitem>
+<listitem><para>key = 'color_mode' : val est un entier. Modifie la propriété 'color_mode' de l'entité graphique. Si color_mode = 2, les arêtes sont dessinées. Par défaut, -2</para></listitem>
+<listitem><para>key = 'mode' : val chaine de caractère. Si val = 'fast', alors les fleches sont des objets 2D (xarrows). Beaucoup plus rapide, mais il n'y plus de profondeur, les têtes de fleches étant toujours plates quelque soit l'orientation. Les options nface,prop,sizefactor,bodycolor et color_mode sont inutile avec cette option.</para></listitem>
+</itemizedlist>
+   </para>
+   <para>
+<warning>champ3d1 avec 'mode' != 'fast' nécessite trisurf.sci et ortogonalvectors.sci</warning>
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+n = 10
+x = rand(n,1,'normal');
+y = rand(n,1,'normal');
+z = rand(n,1,'normal');
+fx = sign(x).*x.*x;
+fy = sign(y).*y.*y;
+fz = sign(z).*z.*z;
+champ3d1(x,y,z,fx,fy,fz);
+
+// Même données, mais vecteurs de taille moitié, arêtes visibles,
+// dont la tête fait 50% du corps et est un tetrahèdre à 3 côtés.
+champ3d1(x,y,z,fx,fy,fz,'sizefactor',0.5,'color_mode',2,'prop',0.5,'nface',3)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="champ3d">champ3d</link></member>
+   <member><link linkend="x_arrows">x_arrows</link></member>
+   <member><link linkend="champ">champ</link></member>
+   <member><link linkend="champ1">champ1</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre Payen (07/2016)</member>
+   </simplelist>
+</refsection>
+</refentry>

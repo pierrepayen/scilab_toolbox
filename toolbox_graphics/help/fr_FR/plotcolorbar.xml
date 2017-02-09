@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from plotcolorbar.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="plotcolorbar" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>plotcolorbar</refname>
+    <refpurpose>Dessin d'une colorbar sur la totalité de la figure.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   plotcolorbar(mn,mx [,id])
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>mn:</term>
+      <listitem><para> réel. Valeur minimale de la colorbar.</para></listitem></varlistentry>
+   <varlistentry><term>mx:</term>
+      <listitem><para> réel. Valeur maximale de la colorbar.</para></listitem></varlistentry>
+   <varlistentry><term>id:</term>
+      <listitem><para> entier. Identifiant de la figure de référence de la colorbar. Par défaut, la dernière figure.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+plotcolorbar va tracer une grande colorbar à droite de la figure courante. Si id est fourni, alors la figure de référence est la id-eme.
+   </para>
+   <para>
+C'est notamment utile quand on veut une colorbar avec plusieurs subplots.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+f=figure()
+f.color_map = jetcolormap(32);
+f.background=-2
+subplot(2,2,1)
+plot3d1();
+subplot(2,2,2)
+plot3d1();
+subplot(2,2,3)
+plot3d1();
+subplot(2,2,4)
+plot3d1();
+plotcolorbar(-1,1)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="colorbar">colorbar</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Auteurs</title>
+   <simplelist type="vert">
+   <member>Pierre Payen (07/2016)</member>
+   </simplelist>
+</refsection>
+</refentry>

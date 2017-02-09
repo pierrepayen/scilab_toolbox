@@ -1,0 +1,8 @@
+champ3d - Creates fac3D object to represent vectors as 3D objects
+champ3d1 - Similar to champ3d but with colors relative to norme
+champ3d2 - Similar to champ3d but another implementation
+colorbarlegend - Allow to put a legend next to the colorbar
+sphereplot - Plot a unit sphere with color on each nodes respective to a input vector
+plotcolorbar - Plot the colorbar in different figure but with respect to the colormap
+xstring3d - Allow to put string in 3D graphical object
+subplot2 - Enhance subplot to add the feature to have different size subplots

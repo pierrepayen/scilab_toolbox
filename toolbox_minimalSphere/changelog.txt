@@ -1,0 +1,6 @@
+changelog of the toolbox_minimalSphere
+
+toolbox_minimalSphere (v1.0)
+    1er version du module minimalSphere
+ -- Pierre Payen <payen.pierre@gmail.com>  mar. févr.  7 14:29:08 MET 2017
+

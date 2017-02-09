@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from subplot2.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="subplot2" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>subplot2</refname>
+    <refpurpose>Surcharge de subplot pour gérer des subplots étendus sur plusieurs cases.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   subplot(m,n,p)
+   subplot(m,n,[l1,c1,l2,c2])
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>m,n :</term>
+      <listitem><para> entiers. Respectivements nombres de lignes et de colonnes du subplot</para></listitem></varlistentry>
+   <varlistentry><term>p :</term>
+      <listitem><para> entiers. indice du subplot. Voir subplot.</para></listitem></varlistentry>
+   <varlistentry><term>l1,c1,l2,c2 :</term>
+      <listitem><para> entiers. Indice du coin supérieur gauche (l1,c1) puis inférieur droit (l2,c2) que vas recouvrir le subplot.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+subplot2 permet d'étendre un subplot sur plusieurs lignes/colonnes ou les deux, en modifiant la propiétés axes_bounds
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Exemples</title>
+   <programlisting role="example"><![CDATA[
+figure
+subplot(3,2,1)
+plot2d
+subplot(3,2,2)
+histplot
+subplot2(3,2,[2 1 3 2]) // va prendre les dernières lignes entières
+param3d
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Voir aussi</title>
+   <simplelist type="inline">
+   <member><link linkend="subplot">subplot</link></member>
+   <member><link linkend="gca">gca</link></member>
+   </simplelist>
+</refsection>
+</refentry>

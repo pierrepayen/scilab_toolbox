@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from foncbaseRWG.sci using help_from_sci_fr().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="foncbaseRWG" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>foncbaseRWG</refname>
+    <refpurpose>Scruture de gestion des fonctions de base éléments finis Rao-Wilton-Glisson</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Séquence d'appel</title>
+   <synopsis>
+   sRWG=foncbaseRWG()
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Paramètres</title>
+   <variablelist>
+   <varlistentry><term>sRWG :</term>
+      <listitem><para> structure à 2 champs de type fonctions : loc,glob</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+[phi1,phi2,phi3]=sRWG.loc(obj,iel,x) : prend un objet msh.sci en paramètre,
+et renvoie les 3 fonctions de bases calculées au point x, relativement à l'élément iel.
+   </para>
+   <para>
+phi=sRWG.glob(obj,ied,x) : recompose <latex> \phi_l = \sum_{j=1,2}= \epsilon_{nj} \Phi_{nj} </latex>
+, réecriture globale (enfonction des aretes) des fonctions de bases locales (en fonction des arêtes des éléments).
+</para>
+</refsection>
+</refentry>

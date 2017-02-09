@@ -1,0 +1,27 @@
+Toolbox: toolbox_graphics
+
+Title: Toolbox graphics
+
+Summary: Compute some new graphical objects
+
+Version: 1.0
+
+Author: Pierre Payen
+
+Maintainer: 
+
+Category: Graphics 
+
+Entity: 
+
+WebSite: 
+
+License: CeCILL-C
+
+ScilabVersion: >= 5.4
+
+Depends: toolbox_matlab, toolbox_geometry
+
+Date: 01/02/2017
+
+Description: This toolbox provides macros to create 3D vectors, 3D sphere, show strings in 3D cartesian space, enhance the colorbar ...
