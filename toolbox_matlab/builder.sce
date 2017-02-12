@@ -7,8 +7,8 @@ mode(-1);
 lines(0);
 
 function main_builder()
-    TOOLBOX_NAME  = "toolbox_geometry";
-    TOOLBOX_TITLE = "Pierre Payen Toolbox Geometry";
+    TOOLBOX_NAME  = "toolbox_matlab";
+    TOOLBOX_TITLE = "Pierre Payen Toolbox matlab";
     toolbox_dir   = get_absolute_file_path("builder.sce");
 
     // Check Scilab's version
