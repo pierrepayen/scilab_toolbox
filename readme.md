@@ -11,7 +11,7 @@ En l'absence de macros permettant de fournir des vrais vecteurs en 3D (xarraows,
 2. `demo_fonbase.sce` : script qui représente les éléments de Ravaiart-Thomas sur un objet diamant maillé sur 6 éléments triangulaires;
 3. `demo_spherictocart.sce` : script qui représente les coordonnées sphériques utilisées.
 4. `pyra-6elt.maila` : fichier de maillage nécessaire à `demo_fonbase.sce` et `PPtoolbox/macros/Elements_finis/`
-5. `scilab_name` : nom d'un module réecrit en mode ATOMS
+5. `toolbox_name` : nom d'un module réecrit en mode ATOMS
 
 ## Requis
 * Scilav > v5.5.x
