@@ -47,7 +47,7 @@ Puis au besoin,
 Attention, un `clear all` supprime les macros de la mémoire.
 
 ## Test d'installation
-Vous pouvez tester l'installation en lancant les scipts `demo_fonbase.sce` (toolbox_{finiteElements,matlab,geometry}_) et  `demo_spherictocart.sce`  (toolbox_{matlab,geometry}_)
+Vous pouvez tester l'installation en lancant les scipts `demo_fonbase.sce` (toolbox_{finiteElements,matlab,geometry) et  `demo_spherictocart.sce`  (toolbox_{matlab,geometry})
 
 
 ## Desinstallation
