@@ -14,9 +14,9 @@ En l'absence de macros permettant de fournir des vrais vecteurs en 3D (xarraows,
 5. `toolbox_name` : nom d'un module réecrit en mode ATOMS
 
 ## Requis
-* Scilav > v5.5.x
-* Linux, develloppé/testé seulement sur CentOS 6 en mode 'naïf'
-* Testé sur Windows en mode ATOMS
+* Scilav > v5.5.1
+* Linux, develleoppé/testé seulement sur CentOS 6 en mode 'naïf'
+* Testé sur Windows/Linux en mode ATOMS
 
 ## Projet
 * Réecrire ce projet et suivre le standard ATOMS (~50%).
@@ -28,23 +28,23 @@ En l'absence de macros permettant de fournir des vrais vecteurs en 3D (xarraows,
 
 ### Installer ma toolbox 'naïve' (slt Linux CentOS, Mint)
 
-`cd chemin/vers/scilab_toolbox/PPtoolbox && chmod u+x install.sh uninstall.sh && ./install.sh`
+```
+$ cd chemin/vers/scilab_toolbox/PPtoolbox && chmod u+x install.sh uninstall.sh && ./install.sh
+```
 
 La toolbox sera lancé à chaque démarrage, et les macros seront protégés, i.e, faire `clear all` ne les supprime pas de la mémoire.
 
 ### Installer dans le style ATOMS
 
-Ex: toolbox_matlab : lancer Scilab puis dans la console
+zipper le dossier toolbox_matlab.
 
-`cd chemin/vers/scilab_toolbox`
+Dans Scilab en mode console
 
-`exec('toolbox_matlab/builder.sce')`
+```
+--> atomsInstall("/chemin/vers/toolbox_matlab.zip");
+```
 
-Puis au besoin,
-
-`exec('toolbox_matlab/loader.sce')`
-
-Attention, un `clear all` supprime les macros de la mémoire.
+La
 
 ## Test d'installation
 Vous pouvez tester l'installation en lancant les scipts `demo_fonbase.sce` (toolbox_{finiteElements,matlab,geometry) et  `demo_spherictocart.sce`  (toolbox_{matlab,geometry})
@@ -52,14 +52,17 @@ Vous pouvez tester l'installation en lancant les scipts `demo_fonbase.sce` (tool
 
 ## Desinstallation
 ### Apres installation naïve
-`cd scilab_toolbox/PPtoolbox && ./uninstall.sh `
+```
+$ cd scilab_toolbox/PPtoolbox && ./uninstall.sh 
+```
 
 Puis suivez-les indications.
 
 ### Après installation ATOMS
 Dans la console Scilab
-`exec('path/to/toolbox/unloader.sce')`
-`exec('path/to/toolbox/cleaner.sce')`
+```
+--> atomsRemove('toolbox_name');
+```
 
 ## Incompatibilité
 * plotlib (S. Mottelet) -> gca() différent
