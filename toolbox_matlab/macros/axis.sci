@@ -26,7 +26,7 @@ function axis(arg)
   select arg
   case 'equal' then
     set(gca(),'isoview','on')
-  case 'off" then
+  case 'off' then
     set(gca(),'box','off');
     set(gca(),'axes_visible',['off','off','off']);
   case 'on' then

@@ -23,28 +23,28 @@ En l'absence de macros permettant de fournir des vrais vecteurs en 3D (xarraows,
 * Supprimer les doublons par rapport à d'autres projets/modules (0%).
 * Optimiser les codes (0%).
 
-## Installation
-`git clone https://github.com/pierrepayen/scilab_toolbox.git`
-
-### Installer ma toolbox 'naïve' (slt Linux CentOS, Mint)
-
-```
-$ cd chemin/vers/scilab_toolbox/PPtoolbox && chmod u+x install.sh uninstall.sh && ./install.sh
+## Installation git
+````bash
+$ git clone https://github.com/pierrepayen/scilab_toolbox.git
 ```
 
-La toolbox sera lancé à chaque démarrage, et les macros seront protégés, i.e, faire `clear all` ne les supprime pas de la mémoire.
-
-### Installer dans le style ATOMS
+### Installer dans le style ATOMS (recommandé)
 
 zipper le dossier toolbox_matlab.
 
 Dans Scilab en mode console
 
-```
+```scilab
 --> atomsInstall("/chemin/vers/toolbox_matlab.zip");
 ```
 
-La
+### Installer ma toolbox 'naïve' (Linux CentOS, Mint)
+
+```bash
+$ cd chemin/vers/scilab_toolbox/PPtoolbox && chmod u+x install.sh uninstall.sh && ./install.sh
+```
+
+La toolbox sera lancé à chaque démarrage, et les macros seront protégés, i.e, faire `clear all` ne les supprime pas de la mémoire.
 
 ## Test d'installation
 Vous pouvez tester l'installation en lancant les scipts `demo_fonbase.sce` (toolbox_{finiteElements,matlab,geometry) et  `demo_spherictocart.sce`  (toolbox_{matlab,geometry})
@@ -52,7 +52,7 @@ Vous pouvez tester l'installation en lancant les scipts `demo_fonbase.sce` (tool
 
 ## Desinstallation
 ### Apres installation naïve
-```
+```bash
 $ cd scilab_toolbox/PPtoolbox && ./uninstall.sh 
 ```
 
@@ -60,7 +60,7 @@ Puis suivez-les indications.
 
 ### Après installation ATOMS
 Dans la console Scilab
-```
+```scilab
 --> atomsRemove('toolbox_name');
 ```
 
