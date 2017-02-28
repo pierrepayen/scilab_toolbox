@@ -30,8 +30,9 @@ $ git clone https://github.com/pierrepayen/scilab_toolbox.git
 
 ### Installer dans le style ATOMS (recommandé)
 
-zipper le dossier toolbox_matlab.
-
+```bash
+$ zip -r toolbox_matlab.zip toolbox_matlab.
+```
 Dans Scilab en mode console
 
 ```scilab
