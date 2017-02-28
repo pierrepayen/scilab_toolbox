@@ -35,12 +35,6 @@ function toolbox_matlablib = startModule()
     end
   end
 
-// Load Preferences GUI
-// =============================================================================
-  if getscilabmode() == "STD" then
-    addModulePreferences(TOOLBOX_TITLE, root_tlbx, etc_tlbx + "toolbox_matlab_preferences.xml");
-  end
-
 endfunction
 
 toolbox_matlablib = startModule();

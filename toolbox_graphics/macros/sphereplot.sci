@@ -30,10 +30,6 @@ function sphereplot(tet,phi,val,varargin)
   // P = rand(length(theta),length(phi),'normal');
   // sphereplot(theta,phi,P)
   //
-  // Screenshots
-  // <scilab:image> sphereplot(); title('Exemple 1'); </scilab:image>
-  // <scilab:image> sphereplot(linspace(%pi/10,%pi/2,10),linspace(0,%pi/7,30),rand(20,30,'normal')); title('Exemple 2'); </scilab:image>
-  //
   // See also
   // plot3d
   // eval3d
